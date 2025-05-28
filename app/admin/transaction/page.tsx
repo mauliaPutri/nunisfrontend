@@ -139,7 +139,6 @@ export default function TransactionPage() {
 
     fetchTransaksi();
 
-    // Set up polling untuk memeriksa transaksi baru setiap 10 detik
     const interval = setInterval(checkNewTransactions, 10000);
 
     return () => clearInterval(interval);
