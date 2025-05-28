@@ -1,8 +1,10 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: process.env.PAGES_BASE_PATH,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental:{
+    appDir: true
+  }
 };
 
-export default nextConfig;
+module.exports = nextConfig;
