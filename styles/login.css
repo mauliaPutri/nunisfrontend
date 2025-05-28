@@ -1,0 +1,41 @@
+* {
+    font-family: "Poppins",sans-serif;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+.login-form {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-image {
+    flex: 1;
+    background: url('../public/bg_login.png') no-repeat center center;
+    background-size: cover;
+
+}
+.login-box {
+    width: 100%;
+    max-width: 100%;
+}
+.login-box h1 {
+    margin-bottom: 80px;
+}
+.btn-block {
+    margin-top: 20px;
+}
+label {
+    margin-bottom: 10px;
+}
+.form-group {
+    margin: 20px;
+}
+.text-center a {
+    margin-left: 10px;
+}
+
