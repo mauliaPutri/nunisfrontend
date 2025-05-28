@@ -1,8 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export', // Menjadikan build static
-  basePath: '/nunisfrontend', // ganti dengan nama repo kamu
-  assetPrefix: '/nunisfrontend/',
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  output: 'export',
+  basePath: process.env.PAGES_BASE_PATH,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
