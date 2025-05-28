@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental:{
-    appDir: true
-  }
+  output: 'export', // Menjadikan build static
+  basePath: '/nunisfrontend', // ganti dengan nama repo kamu
+  assetPrefix: '/nunisfrontend/',
 };
 
 module.exports = nextConfig;
