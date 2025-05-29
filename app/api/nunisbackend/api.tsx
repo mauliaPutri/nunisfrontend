@@ -25,7 +25,8 @@
 //   }
 // }
 
-const api_url = "http://192.168.80.198:8000/api";
+// const api_url = "http://192.168.80.198:8000/api";
+const api_url = "http://192.168.212.1:8000/api";
 // export const api_url = decryptText(api_base_url);
 
 export const API_ENDPOINTS = {
