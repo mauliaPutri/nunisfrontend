@@ -25,7 +25,7 @@
 //   }
 // }
 
-const api_url = "https://nunisbackend-production.up.railway.app/api"; //baru ya
+const api_url = "https://nunisbackend-production-22.up.railway.app/api"; //baru ya
 // const api_url = "https://nunisbackendbaru-production.up.railway.app/api"; //baru tapi lama
 // const api_url = "https://powerful-communication-production.up.railway.app/api"; // lama
 // const api_url = "http://192.168.58.198:8000/api";
