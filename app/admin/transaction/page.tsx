@@ -103,8 +103,8 @@ export default function TransactionPage() {
       });
 
       // Periksa apakah ada transaksi baru dengan status menunggu konfirmasi
-      const newPendingTransactions = sortedData.filter((transaction: Transaksi) => 
-        transaction.status === 0 && 
+      const newPendingTransactions = sortedData.filter((transaction: Transaksi) =>
+        transaction.status === 0 &&
         !products.some(p => p.faktur === transaction.faktur)
       );
 
@@ -373,16 +373,16 @@ export default function TransactionPage() {
     };
     const logoBase64 = await getBase64FromUrl('/LOGO NUNIS.jpg');
     const doc = new jsPDF();
-    doc.addImage(logoBase64, 'JPEG', 28, 12, 35, 35); 
+    doc.addImage(logoBase64, 'JPEG', 28, 12, 35, 35);
     doc.setFontSize(20);
     doc.setFont('helvetica', 'bold');
-    doc.text("NUNIS WARUNG & KOFFIE", 120, 25, { align: "center" }); 
+    doc.text("NUNIS WARUNG & KOFFIE", 120, 25, { align: "center" });
     doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
     const alamat = "Jl. Raya Trenggalek - Ponorogo No.Km.7, RT.17/RW.4, Setono, Kec. Tugu, Kabupaten Trenggalek, Jawa Timur 66352";
     const alamatLines = doc.splitTextToSize(alamat, 100);
     doc.text(alamatLines, 120, 32, { align: "center" });
-    
+
     doc.text("Telp: 08521764546 | Email: nuniswarung@gmail.com", 120, 45, { align: "center" });
     doc.setLineWidth(1.2);
     doc.line(15, 49, 195, 49);
@@ -390,14 +390,14 @@ export default function TransactionPage() {
     // Judul laporan
     doc.setFontSize(14);
     doc.setFont('helvetica', 'bold');
-    doc.text("LAPORAN REKAPITULASI PENJUALAN", 105, 58, { align: "center" }); 
+    doc.text("LAPORAN REKAPITULASI PENJUALAN", 105, 58, { align: "center" });
     doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
-    doc.text(periodeString, 105, 63, { align: "center" }); 
+    doc.text(periodeString, 105, 63, { align: "center" });
     const now = new Date();
     const tanggalCetak = `Tanggal Cetak: ${now.toLocaleDateString('id-ID')} ${now.toLocaleTimeString('id-ID')}`;
     doc.setFontSize(10);
-    doc.text(tanggalCetak, 105, 68, { align: "center" }); 
+    doc.text(tanggalCetak, 105, 68, { align: "center" });
 
     // Tabel
     autoTable(doc, {
@@ -419,7 +419,7 @@ export default function TransactionPage() {
       { align: "center" }
     );
 
-    doc.save(exportStartDate && exportEndDate ? 
+    doc.save(exportStartDate && exportEndDate ?
       `Laporan Rekapitulasi Penjualan${exportStartDate} sampai ${exportEndDate}.pdf` :
       'Laporan Rekapitulasi Semua Penjualan.pdf');
     setLoading(false);
@@ -791,14 +791,13 @@ export default function TransactionPage() {
                       <select
                         value={product.status}
                         onChange={(e) => handleStatusChange(product.faktur, e)}
-                        className={`rounded-xl px-2 py-1 ${
-                          product.status === 0 ? 'bg-yellow-100 text-yellow-800' :
-                          product.status === 1 ? 'bg-blue-100 text-blue-800' :
-                          product.status === 2 ? 'bg-purple-100 text-purple-800' :
-                          product.status === 3 ? 'bg-orange-100 text-orange-800' :
-                          product.status === 4 ? 'bg-green-100 text-green-800' :
-                          'bg-red-100 text-red-800'
-                        }`}
+                        className={`rounded-xl px-2 py-1 ${product.status === 0 ? 'bg-yellow-100 text-yellow-800' :
+                            product.status === 1 ? 'bg-blue-100 text-blue-800' :
+                              product.status === 2 ? 'bg-purple-100 text-purple-800' :
+                                product.status === 3 ? 'bg-orange-100 text-orange-800' :
+                                  product.status === 4 ? 'bg-green-100 text-green-800' :
+                                    'bg-red-100 text-red-800'
+                          }`}
                       >
                         <option value={0} className="bg-yellow-100 text-yellow-800">Menunggu Konfirmasi</option>
                         <option value={1} className="bg-blue-100 text-blue-800">Pesanan Diterima</option>
@@ -819,7 +818,7 @@ export default function TransactionPage() {
         )}
         <div className="flex flex-col sm:flex-row justify-between items-center p-2 mt-1 gap-4">
           <div className="text-xs sm:text-sm text-center sm:text-left w-full sm:w-auto">
-            Menampilkan {indexOfFirstItem + 1} sampai {Math.min(indexOfLastItem, filteredProducts.length)} dari {filteredProducts.length} 
+            Menampilkan {indexOfFirstItem + 1} sampai {Math.min(indexOfLastItem, filteredProducts.length)} dari {filteredProducts.length}
           </div>
           <div className="flex flex-wrap justify-center gap-1 sm:gap-2 w-full sm:w-auto">
             <Button

@@ -51,12 +51,7 @@ export default function Component() {
     async function fetchUsers() {
       // setIsLoading(true);
       try {
-        const response = await axios.get(API_ENDPOINTS.GET_USER, {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        });
+        const response = await axios.get(API_ENDPOINTS.GET_USER);
         setUsers(response.data);
         setTotalPages(Math.ceil(response.data.length / itemsPerPage));
       } catch (error) {

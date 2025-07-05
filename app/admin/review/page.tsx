@@ -45,12 +45,7 @@ export default function Component() {
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await axios.get(API_ENDPOINTS.CONTACT, {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        });
+        const response = await axios.get(API_ENDPOINTS.CONTACT);
         setReview(response.data);
         setProducts(response.data);
         setTotalPages(Math.ceil(response.data.length / itemsPerPage));
