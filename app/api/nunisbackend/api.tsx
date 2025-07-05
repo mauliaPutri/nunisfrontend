@@ -25,8 +25,8 @@
 //   }
 // }
 
-// const api_url = "https://nunisbackendbaru-production.up.railway.app/api"; 
-const api_url = "http://192.168.58.198:8000/api";
+const api_url = "https://nunisbackend-production.up.railway.app/api"; 
+// const api_url = "http://192.168.58.198:8000/api";
 // export const api_url = decryptText(api_base_url);
 
 export const API_ENDPOINTS = {
