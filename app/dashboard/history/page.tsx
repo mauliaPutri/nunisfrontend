@@ -23,7 +23,7 @@ const formatDate = (dateString: string) => {
   if (!dateString) return '';
   const date = new Date(dateString);
   // Tambahkan offset WIB (UTC+7)
-  const wibDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));
+  const wibDate = new Date(date.getTime() + (0 * 60 * 60 * 1000));
   const day = wibDate.getDate();
   const month = wibDate.toLocaleString('id-ID', { month: 'long' });
   const year = wibDate.getFullYear();
@@ -37,7 +37,7 @@ const formatDate = (dateString: string) => {
 const formatDateWithoutTime = (dateString: string) => {
   if (!dateString) return '';
   const date = new Date(dateString);
-  const wibDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));
+  const wibDate = new Date(date.getTime() + (0 * 60 * 60 * 1000));
   const day = wibDate.getDate();
   const month = wibDate.toLocaleString('id-ID', { month: 'long' });
   const year = wibDate.getFullYear();
