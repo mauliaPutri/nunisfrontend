@@ -18,18 +18,25 @@ import { motion } from 'framer-motion';
 import ZoomIn from '@/components/animation/zoomIn';
 import FadeUp from '@/components/animation/fadeUp';
 
-// Fungsi untuk memformat tanggal dengan offset WIB
+
+// Fungsi untuk memformat tanggal dengan timezone lokal
 const formatDate = (dateString: string) => {
   if (!dateString) return '';
   const date = new Date(dateString);
   // Tambahkan offset WIB (UTC+7)
-  const wibDate = new Date(date.getTime() + (0 * 60 * 60 * 1000));
-  const day = wibDate.getDate();
-  const month = wibDate.toLocaleString('id-ID', { month: 'long' });
-  const year = wibDate.getFullYear();
-  const hours = wibDate.getHours().toString().padStart(2, '0');
-  const minutes = wibDate.getMinutes().toString().padStart(2, '0');
-  const seconds = wibDate.getSeconds().toString().padStart(2, '0');
+  // const wibDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));
+  // const day = wibDate.getDate();
+  // const month = wibDate.toLocaleString('id-ID', { month: 'long' });
+  // const year = wibDate.getFullYear();
+  // const hours = wibDate.getHours().toString().padStart(2, '0');
+  // const minutes = wibDate.getMinutes().toString().padStart(2, '0');
+  // const seconds = wibDate.getSeconds().toString().padStart(2, '0');
+  const day = date.getDate();
+  const month = date.toLocaleString('id-ID', { month: 'long' });
+  const year = date.getFullYear();
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const seconds = date.getSeconds().toString().padStart(2, '0');
   return `${day} ${month} ${year}, ${hours}:${minutes}:${seconds}`;
 };
 
@@ -37,10 +44,13 @@ const formatDate = (dateString: string) => {
 const formatDateWithoutTime = (dateString: string) => {
   if (!dateString) return '';
   const date = new Date(dateString);
-  const wibDate = new Date(date.getTime() + (0 * 60 * 60 * 1000));
-  const day = wibDate.getDate();
-  const month = wibDate.toLocaleString('id-ID', { month: 'long' });
-  const year = wibDate.getFullYear();
+  // const wibDate = new Date(date.getTime() + (7 * 60 * 60 * 1000));
+  // const day = wibDate.getDate();
+  // const month = wibDate.toLocaleString('id-ID', { month: 'long' });
+  // const year = wibDate.getFullYear();
+  const day = date.getDate();
+  const month = date.toLocaleString('id-ID', { month: 'long' });
+  const year = date.getFullYear();
   return `${day} ${month} ${year}`;
 };
 
