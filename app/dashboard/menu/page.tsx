@@ -176,10 +176,12 @@ export default function Menu() {
     useEffect(() => {
         if (urlParams) {
             const categoryId = urlParams.get('categoryId') || null;
+            console.log('categoryId:', categoryId);
             if (categoryId) {
                 setSelectedCategory(categoryId);
                 refreshMenu(categoryId);
             } else {
+                setSelectedCategory(null);
                 refreshAllMenu();
             }
         }
@@ -200,30 +202,6 @@ export default function Menu() {
         },
         [loading, hasMore]
     );
-
-    useEffect(() => {
-        const loadAllMenu = async () => {
-            try {
-                if (selectedCategory) {
-                    const menuItems = await fetchMenuByCategory(selectedCategory);
-                    const activeMenuItems = menuItems.filter(item => item.statusActive === 1);
-                    setAllMenu(activeMenuItems);
-                    setMenu(activeMenuItems.slice(0, 50));
-                    setHasMore(activeMenuItems.length > 50);
-                } else {
-                    const allMenuItems = await fetchAllMenu();
-                    const activeMenuItems = allMenuItems.filter(item => item.statusActive === 1);
-                    setAllMenu(activeMenuItems);
-                    setMenu(activeMenuItems.slice(0, 50));
-                    setHasMore(activeMenuItems.length > 50);
-                }
-            } catch (error) {
-                console.error('Terjadi kesalahan saat mengambil menu:', error);
-            }
-            setLoading(false);
-        };
-        loadAllMenu();
-    }, [selectedCategory]);
 
     const handleCategoryChange = (categoryId: string | null) => {
         setSelectedCategory(categoryId);
@@ -738,13 +716,13 @@ export default function Menu() {
                     </motion.div>
                 </div>
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="flex justify-start pt-3 mb-2 gap-4 w-full " style={{ overflow: 'auto', scrollbarWidth: 'none' }}>
-                    <a href="#all">
-                        <Button
+                    {/* <Button onClick={() => router.push("/dashboard/menu")}>Semua</Button> */}
+                    
+                    <Button
                             onClick={() => handleCategoryChange(null)}
                             className={`text-black hover:bg-[#61AB5B] hover:font-bold ${selectedCategory === null ? 'bg-[#61AB5B]' : 'bg-[#333'}`}>
                             Semua
-                        </Button>
-                    </a>
+                    </Button>
                     {categories.map((category) => (
                         <motion.a initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}
                             key={category.id} href={`#${category.name.replace(/\s+/g, '-').toLowerCase()}`}>
