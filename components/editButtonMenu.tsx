@@ -217,7 +217,9 @@ export default function EditButton({ menu, onMenuEdited, onSuccess, onError, onL
               />
             </div>
             <div>
-              <Label htmlFor="category_id">Kategori</Label>
+              <Label htmlFor="category_id">
+                Kategori <span className="text-red-500">*</span>
+              </Label>
               <Select
                 name="category_id"
                 value={selectedCategoryId}
@@ -241,7 +243,9 @@ export default function EditButton({ menu, onMenuEdited, onSuccess, onError, onL
               </Select>
             </div>
             <div>
-              <Label htmlFor="name">Nama</Label>
+              <Label htmlFor="name">
+                Nama <span className="text-red-500">*</span>
+              </Label>
               <Input
                 id="name"
                 name="name"
@@ -251,7 +255,9 @@ export default function EditButton({ menu, onMenuEdited, onSuccess, onError, onL
               />
             </div>
             <div>
-              <Label htmlFor="price">Harga</Label>
+              <Label htmlFor="price">
+                Harga <span className="text-red-500">*</span>
+              </Label>
               <Input
                 id="price"
                 name="price"

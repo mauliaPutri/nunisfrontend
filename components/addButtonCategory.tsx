@@ -127,15 +127,21 @@ export default function ButtonAdd({
         <div className="flex flex-row w-full gap-6">
           <div className="flex flex-col w-1/2 gap-3">
             <div className="grid gap-2">
-              <Label htmlFor="id">ID Kategori</Label>
+              <Label htmlFor="id">
+                ID Kategori <span className="text-red-500">*</span>
+              </Label>
               <Input name="id" value={idValue} onChange={e => setIdValue(e.target.value)} type="text" id="id" className="rounded-xl" placeholder="ID Kategori" required title="Masukkan ID Kategori"/>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="name">Nama Kategori</Label>
+              <Label htmlFor="name">
+                Nama Kategori <span className="text-red-500">*</span>
+              </Label>
               <Input name="name" value={nameValue} onChange={e => setNameValue(e.target.value)} id="name" className="rounded-xl" placeholder="Nama Kategori" required title="Masukkan Nama Kategori"/>
             </div>
             <div className="h-full">
-              <Label className="mb-2" htmlFor="description">Deskripsi</Label>
+              <Label className="mb-2" htmlFor="description">
+                Deskripsi <span className="text-red-500">*</span>
+              </Label>
               <Textarea
                 name="description"
                 value={descriptionValue}
@@ -150,7 +156,9 @@ export default function ButtonAdd({
           </div>
           <div className="flex flex-col w-1/2 gap-4">
             <div>
-              <Label htmlFor="icon">Gambar</Label>
+              <Label htmlFor="icon">
+                Gambar <span className="text-red-500">*</span>
+              </Label>
               <InputFile onChange={handleFileChange}/>
               <div className="p-3 mt-2 rounded-xl justify-center items-center flex md:w-[300px] md:h-[200px] lg:w-[385px] lg:h-[200px] bg-white">
                 <AspectRatio ratio={16/9}>

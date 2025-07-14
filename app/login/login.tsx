@@ -59,7 +59,7 @@ export default function Login() {
           },
         }
       );
-
+// ini dari personalauth token
       if (response.data.success) {
         login(response.data.user);
         document.cookie = `auth_token=${response.data.token}; path=/;`;

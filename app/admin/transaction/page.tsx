@@ -625,7 +625,7 @@ export default function TransactionPage() {
                 setIsExportDialogOpen(true);
                 setExportType('all');
               }}>
-              Ekspor Transaksi
+              Rekapitulasi Transaksi (.xlsx)
             </div>
             <div
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm transition-colors"
@@ -634,7 +634,7 @@ export default function TransactionPage() {
                 setIsExportDialogOpen(true);
                 setExportType('pdf');
               }}>
-              Ekspor Laporan Rekapitulasi Penjualan
+              Laporan Rekapitulasi Penjualan (.pdf)
             </div>
           </div>
         )}

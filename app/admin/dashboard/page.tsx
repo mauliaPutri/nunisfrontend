@@ -131,12 +131,12 @@ export default function Dashboard() {
 
     const intervalId = setInterval(() => {
       fetchAllData();
-      }, 10000); // Ubah ke 10 detik untuk mengurangi beban server
+      }, 10000); // 10 detik untuk mengurangi beban server
 
     return () => clearInterval(intervalId);
   }, [dateRange]);
 
-  // Effect untuk mengambil users dengan auto-refresh
+  // Effect untuk mengambil ulasan dengan auto-refresh
   useEffect(() => {
     async function fetchUsers() {
       setIsLoading(true);

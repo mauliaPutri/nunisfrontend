@@ -182,7 +182,9 @@ export default function AddButton({ onMenuAdded, onSuccess, onError, onLoading }
         <div className="w-full lg:w-1/2 p-1">
           <div className="flex flex-col gap-2">
             <div>
-              <Label htmlFor="category_id">ID Kategori</Label>
+              <Label htmlFor="category_id">
+                ID Kategori <span className="text-red-500">*</span>
+              </Label>
               <Select
                 name="category_id"
                 value={selectedCategoryId}
@@ -206,7 +208,9 @@ export default function AddButton({ onMenuAdded, onSuccess, onError, onLoading }
               </Select>
             </div>
             <div>
-              <Label htmlFor="name">Nama Menu</Label>
+              <Label htmlFor="name">
+                Nama Menu <span className="text-red-500">*</span>
+              </Label>
               <Input
                 id="name"
                 name="name"
@@ -217,7 +221,9 @@ export default function AddButton({ onMenuAdded, onSuccess, onError, onLoading }
               />
             </div>
             <div>
-              <Label htmlFor="price">Harga</Label>
+              <Label htmlFor="price">
+                Harga <span className="text-red-500">*</span>
+              </Label>
               <Input
                 id="price"
                 name="price"

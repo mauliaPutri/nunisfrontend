@@ -143,6 +143,7 @@ const HistoryPage = () => {
     }
   };
 
+  // mengambil data dari localstorage
   const fetchData = async (start?: string, end?: string) => {
     setIsLoading(true);
     setError(null);
